@@ -5398,8 +5398,8 @@ These three standards are defined by the &lt;a href="http://www.omg.org/">Object
 Fluxnova supports the 2.0 version of BPMN.&lt;/p>
 &lt;ul>
 &lt;li>Getting started implementing BPMN Processes: &lt;a href="https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/get-started/quick-start/">Quick Start (Java / JS)&lt;/a>&lt;/li>
-&lt;li>Getting to Know BPMN as a Modeling Language: &lt;a href="https://fluxnova.finos.org/bpmn/tutorial/">BPMN Modeling Tutorial&lt;/a>&lt;/li>
-&lt;li>Modeling BPMN: &lt;a href="https://fluxnova.finos.org/bpmn/reference/">BPMN Modeling Reference&lt;/a>&lt;/li>
+&lt;li>Getting to Know BPMN as a Modeling Language: &lt;a href="https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/modeler/bpmn/">BPMN Modeling Tutorial&lt;/a>&lt;/li>
+&lt;li>Modeling BPMN: &lt;a href="https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/reference/bpmn20/">BPMN Modeling Reference&lt;/a>&lt;/li>
 &lt;li>Tool for modeling BPMN: &lt;a href="https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/modeler/">BPMN Modeler&lt;/a>&lt;/li>
 &lt;li>Implementing BPMN Processes: &lt;a href="https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/reference/bpmn20/">BPMN Implementation Reference&lt;/a>&lt;/li>
 &lt;li>Executing BPMN: &lt;a href="https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/user-guide/process-engine/">Process Engine&lt;/a>&lt;/li>
