@@ -1,10 +1,7 @@
 {
   "ignorePatterns": [
     { "pattern": "^\\{\\{<" },
-    { "pattern": "^%20relref%20" },
-    { "pattern": "^%20ref%20" },
-    { "pattern": "%7B%7B" },
     { "pattern": "^https?://localhost(:\\d+)?/" },
-    { "pattern": "^mailto:[^@\\s]+@\\d" }
+    { "pattern": "^https?://stackoverflow\\.com/questions/tagged/fluxnova$" }
   ]
 }
