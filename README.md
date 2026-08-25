@@ -5,7 +5,7 @@
 This repository contains the sources of the Fluxnova documentation.
 
 **Important:** _do NOT change the content of `themes/fluxnova` directory directly!_
-Instead, change the [theme](//github.com/finos/fluxnova-docs-theme).
+Instead, change the [theme](https://github.com/finos/fluxnova-docs-theme).
 
 ## Contributing
 
