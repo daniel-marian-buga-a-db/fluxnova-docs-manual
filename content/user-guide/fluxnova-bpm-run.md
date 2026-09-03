@@ -120,7 +120,7 @@ The start scripts (`start.bat` for Windows, `start.sh` for Linux/Mac) accept the
 
 ## Starting Fluxnova Run using Docker
 
-Fluxnova Run is also available as a Docker image. Please see the Fluxnova Run section of the Fluxnova Docker documentation [here]({{< relref "/installation/docker.md#start-fluxnova-bpm-run-using-docker" >}}) for more details.
+Fluxnova Run is also available as a prebuilt Docker image. Please see the Fluxnova Docker documentation [here]({{< relref "/installation/docker.md#start-fluxnova-using-docker" >}}) for instructions on how to pull and start it.
 
 ## Optional components
 

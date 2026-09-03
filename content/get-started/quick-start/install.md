@@ -21,8 +21,8 @@ In the following section, we'll describe how to install the Fluxnova Platform lo
 If you prefer, you can also run the Fluxnova Platform with Docker:
 
 ```sh
-docker pull fluxnova/fluxnova-bpm-platform:run-latest
-docker run -d --name fluxnova -p 8080:8080 fluxnova/fluxnova-bpm-platform:run-latest
+docker pull finos/fluxnova-bpm-platform:latest
+docker run -d --name fluxnova -p 8080:8080 finos/fluxnova-bpm-platform:latest
 ```
 
 Afterwards, you can [install the Fluxnova Modeler](#fluxnova-modeler).
