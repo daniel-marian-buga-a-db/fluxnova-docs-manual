@@ -10,5 +10,6 @@
     { "pattern": "^mailto:dev@component\\.io$" },
     { "pattern": "^https://github\\.com(hibernate/hibernate-validator/blob/main/copyright\\.txt|xlts-dev/bower-angular(-animate|-cookies|-resource|-route|-sanitize)?$|finos/fluxnova-dmn-js$|finos-dmn-moddle$|bpmn-io/feel-linter$)" },
     { "pattern": "^https://projects\\.eclipse\\.org/projects/ee4j\\.jaxrs/who$" }
-  ]
+  ],
+  "retryOn429": true
 }
