@@ -1,7 +1,14 @@
 {
   "ignorePatterns": [
     { "pattern": "^\\{\\{<" },
+    { "pattern": "*\\{\\{.*" },
+    { "pattern": ".*%7B%7B.*" },
     { "pattern": "^https?://localhost(:\\d+)?/" },
-    { "pattern": "^https?://stackoverflow\\.com/questions/tagged/fluxnova$" }
+    { "pattern": "^https?://stackoverflow\\.com/questions/tagged/fluxnova$" },
+    { "pattern": "^https://artifacts\\.camunda\\.com" },
+    { "pattern": "^mailto:[^@]+@\\d" },
+    { "pattern": "^mailto:dev@component\\.io$" },
+    { "pattern": "^https://github\\.com(hibernate/hibernate-validator/blob/main/copyright\\.txt|xlts-dev/bower-angular(-animate|-cookies|-resource|-route|-sanitize)?$|finos/fluxnova-dmn-js$|finos-dmn-moddle$|bpmn-io/feel-linter$)" },
+    { "pattern": "^https://projects\\.eclipse\\.org/projects/ee4j\\.jaxrs/who$" }
   ]
 }

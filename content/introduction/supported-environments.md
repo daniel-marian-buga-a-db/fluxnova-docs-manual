@@ -72,8 +72,7 @@ Clustered or replicated databases are supported given the following conditions. 
 
 # Fluxnova Modeler
 
-[Supported environments for Fluxnova Modeler -Windows ](https://github.com/finos/fluxnova-modeler/actions/runs/22626886127/artifacts/5742061267)  
-[Supported environments for Fluxnova Modeler -Mac ](https://github.com/finos/fluxnova-modeler/actions/runs/22626886127/artifacts/5742038638)  
+You can build and run the Modeler for you platform from the [latest release](https://github.com/finos/fluxnova-modeler/releases/latest).
 
 # Maintenance Policy
 
