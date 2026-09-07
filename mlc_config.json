@@ -10,7 +10,8 @@
     { "pattern": "^https://www\\.gnu\\.org/software/classpath/license\\.html$" },
     { "pattern": "^https://dev\\.mysql\\.com/" },
     { "pattern": "^https?://(www\\.)?stackoverflow\\.com/" },
-    { "pattern": "^https://artifacts\\.camunda\\.com" }
+    { "pattern": "^https://artifacts\\.camunda\\.com" },
+    { "pattern": "^https://mvnrepository\\.com/" }
   ],
   "retryOn429": true
 }
