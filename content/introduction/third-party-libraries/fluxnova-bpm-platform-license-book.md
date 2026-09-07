@@ -560,7 +560,7 @@ and re-export of encryption software, to see if this is permitted.
 https://github.com/jboss/jboss-jakarta-jaxrs-api_spec
 -----------------------------------------------------------------------------------
 Copyright: Jakarta RESTful Web Services Project, Eclipse Foundation  
-List of contributors: https://projects.eclipse.org/projects/ee4j.jaxrs/who</pre></details></div>
+List of contributors: https://projects.eclipse.org/projects/ee4j.rest/developer</pre></details></div>
 <div><details><summary>jboss-jaxb-api_2.3_spec@2.0.1.Final(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Red Hat</pre></details></div>
 <div><details><summary>jandex@2.4.3.Final(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright 2013 Red Hat, Inc., and individual contributors</pre></details></div>
 <div><details><summary>mybatis@3.5.15(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright various authors: https://mybatis.org/mybatis-3/team.html
