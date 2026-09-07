@@ -3,15 +3,14 @@
     { "pattern": "^\\{\\{<" },
     { "pattern": ".*\\{\\{.*" },
     { "pattern": ".*%7B%7B.*" },
-    { "pattern": "^https?://localhost(:\\d+)?(/.*)?$" },
-    { "pattern": "^https?://(www\\.)?stackoverflow\\.com/" },
-    { "pattern": "^https://artifacts\\.camunda\\.com" },
-    { "pattern": "^mailto:[^@]+@\\d" },
-    { "pattern": "^mailto:dev@component\\.io$" },
+    { "pattern": "^https?://localhost" },
+    { "pattern": "^mailto:" },
+    { "pattern": "^file://" },
     { "pattern": "^https://downloads\\.camunda\\.cloud/enterprise-release" },
     { "pattern": "^https://www\\.gnu\\.org/software/classpath/license\\.html$" },
     { "pattern": "^https://dev\\.mysql\\.com/" },
-    { "pattern": "^file://" }
+    { "pattern": "^https?://(www\\.)?stackoverflow\\.com/" },
+    { "pattern": "^https://artifacts\\.camunda\\.com" }
   ],
   "retryOn429": true
 }
