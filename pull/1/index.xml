@@ -167,10 +167,62 @@ It is used to configure Fluxnova in the following distributions:&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/installation/full/tomcat/">Apache Tomcat&lt;/a>&lt;/li>
 &lt;/ul>
-
-&lt;div class="note bg-warning docs-warning">
- &lt;h3>Wildfly&lt;/h3>
- &lt;p>The &lt;code>bpm-platform.xml&lt;/code> file is not used in the Fluxnova distribution for Wildfly. There, the configuration is added to the central application server configuration file (&lt;code>standalone.xml&lt;/code> or &lt;code>domain.xml&lt;/code>). The XML schema is the same (i.e., the same elements and properties can be used). See the &lt;a href="https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/user-guide/runtime-container-integration/jboss/">The Fluxnova Wildfly Subsystem&lt;/a> section of the &lt;a href="https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/user-guide/">User Guide&lt;/a> for more details.&lt;/p></description></item><item><title>Classic vs Fluent API</title><link>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/reference/cmmn11/api/classic-vs-fluent/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/reference/cmmn11/api/classic-vs-fluent/</guid><description>&lt;!-- move this to the user guide as soon as there is a concept on how separate CMMN and BPMN concerns in it -->
+&lt;h1 id="xml-schema-namespace">Xml Schema Namespace&lt;/h1>
+&lt;p>The namespace for the &lt;code>bpm-platform.xml&lt;/code> file is &lt;code>http://www.camunda.org/schema/1.0/BpmPlatform&lt;/code>. The XSD file can be found in the &lt;code>fluxnova-engine.jar&lt;/code> file.&lt;/p>
+&lt;h2 id="example">Example&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;bpm-platform&lt;/span> &lt;span style="color:#a6e22e">xmlns=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;http://www.camunda.org/schema/1.0/BpmPlatform&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">xmlns:xsi=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">xsi:schemaLocation=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;http://www.camunda.org/schema/1.0/BpmPlatform http://www.camunda.org/schema/1.0/BpmPlatform &amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;job-executor&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;job-acquisition&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;default&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/job-executor&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;process-engine&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;default&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;job-acquisition&amp;gt;&lt;/span>default&lt;span style="color:#f92672">&amp;lt;/job-acquisition&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;configuration&amp;gt;&lt;/span>org.finos.fluxnova.bpm.engine.impl.cfg.JtaProcessEngineConfiguration&lt;span style="color:#f92672">&amp;lt;/configuration&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;datasource&amp;gt;&lt;/span>jdbc/ProcessEngine&lt;span style="color:#f92672">&amp;lt;/datasource&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;properties&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;property&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;history&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>full&lt;span style="color:#f92672">&amp;lt;/property&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;property&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;databaseSchemaUpdate&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>true&lt;span style="color:#f92672">&amp;lt;/property&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;property&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;transactionManagerJndiName&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>java:appserver/TransactionManager&lt;span style="color:#f92672">&amp;lt;/property&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;property&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;authorizationEnabled&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>true&lt;span style="color:#f92672">&amp;lt;/property&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/properties&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/process-engine&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/bpm-platform&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="syntax-reference">Syntax Reference&lt;/h1>
+&lt;table class="table table-striped">
+ &lt;tr>
+ &lt;th>Tag name &lt;/th>
+ &lt;th>Parent tag name&lt;/th>
+ &lt;th>Required?&lt;/th>
+ &lt;th>Description&lt;/th>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>&amp;lt;bpm-platform&amp;gt;&lt;/code>&lt;/td>
+ &lt;td>None.&lt;/td>
+ &lt;td>true&lt;/td>
+ &lt;td>Root element of the bpm-platform.xml file.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>&amp;lt;job-executor&amp;gt;&lt;/code>&lt;/td>
+ &lt;td>&lt;code>&amp;lt;bpm-platform&amp;gt;&lt;/code>&lt;/td>
+ &lt;td>true&lt;/td>
+ &lt;td>See &lt;a href="https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/reference/deployment-descriptors/tags/job-executor/">job-executor Reference&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>&amp;lt;process-engine&amp;gt;&lt;/code>&lt;/td>
+ &lt;td>&lt;code>&amp;lt;bpm-platform&amp;gt;&lt;/code>&lt;/td>
+ &lt;td>false&lt;/td>
+ &lt;td>See &lt;a href="https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/reference/deployment-descriptors/tags/process-engine/">process-engine Reference&lt;/a>&lt;/td>
+ &lt;/tr>
+&lt;/table>
+&lt;h1 id="configure-location-of-the-bpm-platformxml-file">Configure Location of the bpm-platform.xml File&lt;/h1>
+&lt;p>You can configure the location of the &lt;code>bpm-platform.xml&lt;/code>, so the file can be stored externally to allow an easy update path of fluxnova-bpm-platform.ear. This negates the work of unpacking / repackaging the ear when you need to change the configuration.&lt;/p></description></item><item><title>Classic vs Fluent API</title><link>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/reference/cmmn11/api/classic-vs-fluent/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/reference/cmmn11/api/classic-vs-fluent/</guid><description>&lt;!-- move this to the user guide as soon as there is a concept on how separate CMMN and BPMN concerns in it -->
 &lt;p>To interact with case instances and executions, the process engine offers the case service. It can be retrieved by &lt;code>processEngine.getCaseService()&lt;/code>.&lt;/p>
 &lt;p>The &lt;code>CaseService&lt;/code> offers two API variants. One is in the following referred to as the &lt;em>classic&lt;/em> API, since it is very similar to the API offered by the &lt;code>RuntimeService&lt;/code> for BPMN processes. The &lt;em>fluent&lt;/em> API follows a different concept in that it allows composition of case service commands by method chaining.&lt;/p></description></item><item><title>Configuration</title><link>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/webapps/cockpit/extend/configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/webapps/cockpit/extend/configuration/</guid><description>&lt;p>You can override the default configuration of Cockpit using a central configuration file
 located in &lt;code>app/cockpit/scripts/config.js&lt;/code>. The following configuration options are
@@ -337,7 +389,7 @@ want to get to know Fluxnova quickly, without any additional setup or installati
 &lt;li>Eclipse integrated development environment (IDE)&lt;/li>
 &lt;/ul>
 &lt;h1 id="fluxnova-platform">Fluxnova Platform&lt;/h1>
-&lt;p>First, download a distribution of the Fluxnova Platform. You can choose from different distributions for various application servers. In this tutorial, we will use the Apache Tomcat based distribution. Download it from &lt;a href="https://fluxnova.finos.org/download/platform">the download page&lt;/a>.&lt;/p></description></item><item><title>Download and Installation (1/6)</title><link>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/get-started/quick-start/install/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/get-started/quick-start/install/</guid><description>&lt;p>First, you need to install the Fluxnova Platform and the Fluxnova Modeler.&lt;/p>
+&lt;p>First, download a distribution of the Fluxnova Platform. You can choose from different distributions for various application servers. In this tutorial, we will use the Apache Tomcat based distribution. Download it from the &lt;a href="https://github.com/finos/fluxnova-bpm-platform/releases">Fluxnova Platform releases&lt;/a>.&lt;/p></description></item><item><title>Download and Installation (1/6)</title><link>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/get-started/quick-start/install/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/get-started/quick-start/install/</guid><description>&lt;p>First, you need to install the Fluxnova Platform and the Fluxnova Modeler.&lt;/p>
 &lt;p>In the following section, we&amp;rsquo;ll describe how to install the Fluxnova Platform locally on your machine.&lt;/p>
 
 &lt;div class="note bg-info docs-info">
@@ -2469,13 +2521,7 @@ instance by its connector ID, which is &lt;code>http-connector&lt;/code>.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;humanTask&lt;/span> &lt;span style="color:#a6e22e">id=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;theHumanTask&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;A Human Task&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>A human task in state &lt;code>ENABLED&lt;/code> can be started manually using the &lt;code>CaseService&lt;/code> as follows:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>caseService.&lt;span style="color:#a6e22e">manuallyStartCaseExecution&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;aCaseExecutionId&amp;#34;&lt;/span>);
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>When the human task becomes &lt;code>ACTIVE&lt;/code>, a new task is created in the task list of the user(s) or group(s) assigned to that task.&lt;/p></description></item><item><title>Install the pre-packaged Distribution</title><link>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/installation/full/jboss/pre-packaged/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/installation/full/jboss/pre-packaged/</guid><description>&lt;h1 id="installation-procedure">Installation Procedure&lt;/h1>
-&lt;ol>
-&lt;li>Download the pre-packaged distribution for &lt;a href="https://downloads.camunda.cloud/release/camunda-bpm/wildfly/">WildFly&lt;/a>.&lt;/li>
-&lt;li>Unpack the distro to a directory.&lt;/li>
-&lt;li>Adjust the datasource according to your needs (see &lt;a href="https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/installation/full/jboss/manual/">Manual Installation&lt;/a>).&lt;/li>
-&lt;li>Startup the server by running &lt;code>fluxnova-welcome.bat&lt;/code> or by using the &lt;code>$WILDFLY_HOME/bin/standalone.{bat/sh}&lt;/code> script.&lt;/li>
-&lt;/ol></description></item><item><title>Install the Pre-Packaged Distribution</title><link>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/installation/full/tomcat/pre-packaged/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/installation/full/tomcat/pre-packaged/</guid><description>&lt;h1 id="installation-procedure">Installation Procedure&lt;/h1>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>When the human task becomes &lt;code>ACTIVE&lt;/code>, a new task is created in the task list of the user(s) or group(s) assigned to that task.&lt;/p></description></item><item><title>Install the Pre-Packaged Distribution</title><link>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/installation/full/tomcat/pre-packaged/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/installation/full/tomcat/pre-packaged/</guid><description>&lt;h1 id="installation-procedure">Installation Procedure&lt;/h1>
 &lt;ol>
 &lt;li>Download the pre-packaged distribution from &lt;a href="https://downloads.camunda.cloud/release/camunda-bpm/tomcat/">https://downloads.camunda.cloud/release/camunda-bpm/tomcat/&lt;/a>.&lt;/li>
 &lt;li>Unpack the distro to a directory.&lt;/li>
@@ -5410,17 +5456,7 @@ Fluxnova supports the 2.0 version of BPMN.&lt;/p>
 
  &lt;h3>Deprecated Feature&lt;/h3>
 
- &lt;p>This feature is deprecated and provided solely for backward compatibility; it will be removed in future releases.&lt;/p></description></item><item><title>Install the Full Distribution on a JBoss EAP/WildFly Application Server manually</title><link>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/installation/full/jboss/manual/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/installation/full/jboss/manual/</guid><description>&lt;p>This document describes the installation of Fluxnova and its components on a vanilla &lt;a href="http://www.wildfly.org">WildFly Application Server&lt;/a> or JBoss EAP 7 / 8.&lt;/p>
-
-&lt;div class="note bg-info docs-info">
- &lt;h3>Reading this Guide&lt;/h3>
- &lt;p>&lt;p>This guide uses a number of variables to denote common path names and constants:&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>$WILDFLY_HOME&lt;/code> points to the JBoss EAP/WildFly application server main directory.&lt;/li>
-&lt;li>&lt;code>$WILDFLY_VERSION&lt;/code> denotes the version of WildFly application server.&lt;/li>
-&lt;li>&lt;code>$WILDFLY_DISTRIBUTION&lt;/code> represents the downloaded pre-packaged Fluxnova distribution for WildFly, e.g. &lt;code>fluxnova-bpm-wildfly-$PLATFORM_VERSION.zip&lt;/code> or &lt;code>fluxnova-bpm-wildfly-$PLATFORM_VERSION.tar.gz&lt;/code>.&lt;/li>
-&lt;li>&lt;code>$PLATFORM_VERSION&lt;/code> denotes the version of Fluxnova you want to install or already have installed, e.g. &lt;code>1.0.0&lt;/code>.&lt;/li>
-&lt;/ul>&lt;/p></description></item><item><title>Install the Full Distribution on a Tomcat Application Server manually</title><link>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/installation/full/tomcat/manual/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/installation/full/tomcat/manual/</guid><description>&lt;p>This section describes how you can install Fluxnova and its components on a vanilla &lt;a href="http://tomcat.apache.org/">Apache Tomcat&lt;/a>, if you are not able to use the pre-packaged Tomcat distribution. In addition, download a &lt;a href="https://mvnrepository.com/artifact/org.finos.fluxnova.bpm.tomcat/fluxnova-tomcat">Tomcat distribution&lt;/a> to fetch the required Fluxnova modules.&lt;/p>
+ &lt;p>This feature is deprecated and provided solely for backward compatibility; it will be removed in future releases.&lt;/p></description></item><item><title>Install the Full Distribution on a Tomcat Application Server manually</title><link>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/installation/full/tomcat/manual/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/installation/full/tomcat/manual/</guid><description>&lt;p>This section describes how you can install Fluxnova and its components on a vanilla &lt;a href="http://tomcat.apache.org/">Apache Tomcat&lt;/a>, if you are not able to use the pre-packaged Tomcat distribution. In addition, download a &lt;a href="https://mvnrepository.com/artifact/org.finos.fluxnova.bpm.tomcat/fluxnova-tomcat">Tomcat distribution&lt;/a> to fetch the required Fluxnova modules.&lt;/p>
 
 &lt;div class="note bg-info docs-info">
  &lt;h3>Reading the Guide&lt;/h3>
@@ -5718,7 +5754,7 @@ or simply &lt;code>/engine-rest/{rest-methods}&lt;/code>. Any other shared (i.e.
 &lt;/div>
 
 &lt;h1 id="overview">Overview&lt;/h1>
-&lt;p>Element templates are a way to extend the &lt;a href="https://fluxnova.org/bpmn/tool/">Fluxnova Modeler&lt;/a> with domain specific diagram elements such as service and user tasks.&lt;/p>
+&lt;p>Element templates are a way to extend the &lt;a href="https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/modeler/">Fluxnova Modeler&lt;/a> with domain specific diagram elements such as service and user tasks.&lt;/p>
 &lt;figure class="image">
  &lt;span>&lt;img
  src="img/overview.png"
@@ -5823,55 +5859,7 @@ They are useful when clients need to remove sets of deployments efficiently and 
 &lt;p>A case task is a regular task that requires a &lt;code>caseRef&lt;/code> attribute that references a case definition by its key. Such a case task can be defined as follows:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;caseTask&lt;/span> &lt;span style="color:#a6e22e">id=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;checkCreditCase&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Check credit&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">caseRef=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;checkCreditCase&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The referenced case definition is resolved at runtime. This means that the referenced case can be deployed independently from the calling case, if needed.&lt;/p>
-&lt;p>A case task in state &lt;code>ENABLED&lt;/code> can be started manually using the &lt;code>CaseService&lt;/code> as follows:&lt;/p></description></item><item><title>Configure the Full Distribution for JBoss EAP/WildFly</title><link>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/installation/full/jboss/configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/installation/full/jboss/configuration/</guid><description>&lt;p>This page explains how to configure the full distribution for the JBoss EAP/WildFly application server.&lt;/p>
-&lt;h2 id="ldap">LDAP&lt;/h2>
-&lt;p>In order to setup LDAP for the JBoss EAP/WildFly Application Server distribution, you have to perform the following steps:&lt;/p>
-&lt;h3 id="adjust-the-process-engine-configuration">Adjust the Process Engine Configuration&lt;/h3>
-&lt;p>Edit the file &lt;code>standalone.xml&lt;/code> (or &lt;code>domain.xml&lt;/code>) provided by the JBoss EAP/WildFly Application Server and add the &lt;a href="https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/user-guide/process-engine/identity-service/#the-ldap-identity-service">LDAP Identity Provider Plugin&lt;/a> and the &lt;a href="https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/user-guide/process-engine/authorization-service/#the-administrator-authorization-plugin">Administrator Authorization Plugin&lt;/a>.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;subsystem&lt;/span> &lt;span style="color:#a6e22e">xmlns=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;urn:org.finos.fluxnova.bpm.jboss:1.1&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;process-engines&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;process-engine&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;default&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">default=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;true&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span> ...
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;properties&amp;gt;&lt;/span>...&lt;span style="color:#f92672">&amp;lt;/properties&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;plugins&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;plugin&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;class&amp;gt;&lt;/span>org.finos.fluxnova.bpm.identity.impl.ldap.plugin.LdapIdentityProviderPlugin&lt;span style="color:#f92672">&amp;lt;/class&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;properties&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;property&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;serverUrl&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>ldap://localhost:4334/&lt;span style="color:#f92672">&amp;lt;/property&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;property&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;managerDn&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>uid=jonny,ou=office-berlin,o=fluxnova,c=org&lt;span style="color:#f92672">&amp;lt;/property&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;property&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;managerPassword&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>s3cr3t&lt;span style="color:#f92672">&amp;lt;/property&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;property&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;baseDn&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>o=fluxnova,c=org&lt;span style="color:#f92672">&amp;lt;/property&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;property&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;userSearchBase&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>ou=employees&lt;span style="color:#f92672">&amp;lt;/property&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;property&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;userSearchFilter&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>(objectclass=person)&lt;span style="color:#f92672">&amp;lt;/property&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;property&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;userIdAttribute&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>uid&lt;span style="color:#f92672">&amp;lt;/property&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;property&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;userFirstnameAttribute&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>cn&lt;span style="color:#f92672">&amp;lt;/property&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;property&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;userLastnameAttribute&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>sn&lt;span style="color:#f92672">&amp;lt;/property&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;property&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;userEmailAttribute&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>mail&lt;span style="color:#f92672">&amp;lt;/property&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;property&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;userPasswordAttribute&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>userpassword&lt;span style="color:#f92672">&amp;lt;/property&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;property&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;groupSearchBase&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>ou=roles&lt;span style="color:#f92672">&amp;lt;/property&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;property&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;groupSearchFilter&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>(objectclass=groupOfNames)&lt;span style="color:#f92672">&amp;lt;/property&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;property&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;groupIdAttribute&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>ou&lt;span style="color:#f92672">&amp;lt;/property&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;property&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;groupNameAttribute&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>cn&lt;span style="color:#f92672">&amp;lt;/property&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;property&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;groupMemberAttribute&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>member&lt;span style="color:#f92672">&amp;lt;/property&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/properties&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/plugin&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;plugin&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;class&amp;gt;&lt;/span>org.finos.fluxnova.bpm.engine.impl.plugin.AdministratorAuthorizationPlugin&lt;span style="color:#f92672">&amp;lt;/class&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;properties&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;property&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;administratorUserName&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>admin&lt;span style="color:#f92672">&amp;lt;/property&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/properties&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/plugin&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/plugins&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/process-engine&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/process-engines&amp;gt;&lt;/span> ...
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/subsystem&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The &lt;code>administratorUserName&lt;/code> property should contain the user id of the LDAP user you want to grant administrator authorizations to. You can then use this user to log in to the web application and grant authorizations to additional users.&lt;/p></description></item><item><title>Configure the Full Distribution for Oracle WebLogic</title><link>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/installation/full/wls/configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/installation/full/wls/configuration/</guid><description>&lt;p>This page explains how to configure the full distribution for an Oracle WebLogic application server.&lt;/p>
+&lt;p>A case task in state &lt;code>ENABLED&lt;/code> can be started manually using the &lt;code>CaseService&lt;/code> as follows:&lt;/p></description></item><item><title>Configure the Full Distribution for Oracle WebLogic</title><link>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/installation/full/wls/configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/installation/full/wls/configuration/</guid><description>&lt;p>This page explains how to configure the full distribution for an Oracle WebLogic application server.&lt;/p>
 &lt;h2 id="ldap">LDAP&lt;/h2>
 &lt;p>In order to set up LDAP for the Oracle WebLogic distribution, you have to perform the following steps:&lt;/p>
 &lt;h3 id="add-the-ldap-library">Add the LDAP Library&lt;/h3>
@@ -6041,7 +6029,7 @@ supports its usage.&lt;/p></description></item><item><title>Filters</title><link
 &lt;li>Historic case instances plus all related historic data (e.g., historic variable instances, historic task instances, etc.)&lt;/li>
 &lt;li>Historic batches plus all related historic data (historic incidents and job logs)&lt;/li>
 &lt;/ul>
-&lt;p>History cleanup can be triggered manually or scheduled on a regular basis. Only &lt;a href="https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/user-guide/process-engine/authorization-service/#the-fluxnova-admin-group">fluxnova-admins&lt;/a> have permissions to execute history cleanup manually.&lt;/p></description></item><item><title>History Time To Live</title><link>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/modeler/history-time-to-live/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/modeler/history-time-to-live/</guid><description>&lt;p>Each execution of a model resource (BPMN, DMN, and CMMN) generates historic data during execution that is stored in the database. In Fluxnova, &lt;a href="https://docs.fluxnova.finos.org/user-guide/process-engine/history/">history cleanup&lt;/a> removes this historic data from the database based on a defined &lt;strong>history time to live (HTTL)&lt;/strong>.&lt;/p>
+&lt;p>History cleanup can be triggered manually or scheduled on a regular basis. Only &lt;a href="https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/user-guide/process-engine/authorization-service/#the-fluxnova-admin-group">fluxnova-admins&lt;/a> have permissions to execute history cleanup manually.&lt;/p></description></item><item><title>History Time To Live</title><link>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/modeler/history-time-to-live/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/modeler/history-time-to-live/</guid><description>&lt;p>Each execution of a model resource (BPMN, DMN, and CMMN) generates historic data during execution that is stored in the database. In Fluxnova, &lt;a href="https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/user-guide/process-engine/history/">history cleanup&lt;/a> removes this historic data from the database based on a defined &lt;strong>history time to live (HTTL)&lt;/strong>.&lt;/p>
 &lt;p>Going forward, you must configure HTTL in one of the following ways:&lt;/p>
 &lt;ul>
 &lt;li>Define HTTL per model directly in Desktop Modeler.&lt;/li>
@@ -6268,7 +6256,7 @@ Beside the diagram view the process will be displayed as an &lt;a href="#activit
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;version&amp;gt;&lt;/span>{project-version}&lt;span style="color:#f92672">&amp;lt;/version&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>By default the application path is &lt;code>engine-rest&lt;/code>, so without any further configuration you can access the api at &lt;code>http://localhost:8080/engine-rest&lt;/code>.&lt;/p>
-&lt;p>Because we use jersey, one can use spring boot&amp;rsquo;s &lt;a href="http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html">common application properties&lt;/a>.
+&lt;p>Because we use jersey, one can use spring boot&amp;rsquo;s &lt;a href="https://docs.spring.io/spring-boot/appendix/application-properties/index.html">common application properties&lt;/a>.
 For example, to change the application path, use&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-properties" data-lang="properties">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">spring.jersey.application-path&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">myapplicationpath&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To modify the configuration or register additional resources, one can provide a bean which extends from
@@ -6486,9 +6474,24 @@ supported by the Fluxnova DMN engine:&lt;/p></description></item><item><title>Ev
  &lt;a href="https://github.com/finos/fluxnova-get-started-dmn/archive/Step-4.zip">Download as .zip&lt;/a>
  or checkout the corresponding tag with &lt;a class="toggle-instructions">Git&lt;/a>.
  &lt;/p></description></item><item><title>Fluent Builder API</title><link>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/user-guide/model-api/bpmn-model-api/fluent-builder-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/user-guide/model-api/bpmn-model-api/fluent-builder-api/</guid><description>&lt;p>To create simple BPMN processes we provide a fluent builder API. With this API you can easily create basic
-processes in a few lines of code. In the &lt;a href="https://github.com/finos/fluxnova-bpm-examples/tree/master/bpmn-model-api/generate-process-fluent-api">generate process fluent api&lt;/a> quickstart we
-demonstrate how to create a rather complex process with 5 tasks and 2 gateways within less than 50 lines of code.&lt;/p>
-&lt;p>The fluent builder API is not nearly complete but provides you with the following basic elements:&lt;/p></description></item><item><title>Full Example</title><link>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/reference/forms/embedded-forms/integrate/full-examples/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/reference/forms/embedded-forms/integrate/full-examples/</guid><description>&lt;p>Full examples of how to integrate the Forms SDK in a custom application can be found in the &lt;a href="https://github.com/finos/fluxnova-examples">Fluxnova Platform Examples Repository&lt;/a> in Github.&lt;/p></description></item><item><title>Hypertext Application Language (HAL)</title><link>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/reference/rest/overview/hal/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/reference/rest/overview/hal/</guid><description>&lt;p>The REST API provides some resources in an additional media type. The
+processes in a few lines of code.&lt;/p>
+&lt;p>The fluent builder API is not nearly complete but provides you with the following basic elements:&lt;/p>
+&lt;ul>
+&lt;li>process&lt;/li>
+&lt;li>start event&lt;/li>
+&lt;li>exclusive gateway&lt;/li>
+&lt;li>parallel gateway&lt;/li>
+&lt;li>script task&lt;/li>
+&lt;li>service task&lt;/li>
+&lt;li>user task&lt;/li>
+&lt;li>signal event definition&lt;/li>
+&lt;li>end event&lt;/li>
+&lt;li>subprocess&lt;/li>
+&lt;/ul>
+&lt;h1 id="create-a-process-with-the-fluent-builder-api">Create a Process With the Fluent Builder API&lt;/h1>
+&lt;p>To create an empty model instance with a new process the method &lt;code>Bpmn.createProcess()&lt;/code> is used. After this,
+you can add as many tasks and gateways as you like. At the end you must call &lt;code>done()&lt;/code> to return the generated
+model instance. For example, a simple process with one user task can be created like this:&lt;/p></description></item><item><title>Full Example</title><link>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/reference/forms/embedded-forms/integrate/full-examples/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/reference/forms/embedded-forms/integrate/full-examples/</guid><description>&lt;p>Full examples of how to integrate the Forms SDK in a custom application can be found in the &lt;a href="https://github.com/finos/fluxnova-examples">Fluxnova Platform Examples Repository&lt;/a> in Github.&lt;/p></description></item><item><title>Hypertext Application Language (HAL)</title><link>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/reference/rest/overview/hal/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/reference/rest/overview/hal/</guid><description>&lt;p>The REST API provides some resources in an additional media type. The
 &lt;a href="http://stateless.co/hal_specification.html">HAL&lt;/a> media type &lt;code>application/hal+json&lt;/code> describes a format which contains
 links and information about other resources. This allows us to embed the
 process definition or assignee of a task directly into the response, which in turn
@@ -6665,7 +6668,7 @@ rule task, please refer to the &lt;a href="https://daniel-marian-buga-a-db.githu
 
 &lt;div class="note bg-info docs-info">
  &lt;h3>Supported Environments&lt;/h3>
- &lt;p>Please note that the environments listed in this section depend on the version of Fluxnova. Please select the corresponding version of this documentation to see the environment that fits to your version of Fluxnova. e.g., &lt;a href="http://docs.fluxnova.finos.org/1.0/guides/user-guide/#introduction-supported-environments">supported environments for version 1.0&lt;/a>&lt;/p>
+ &lt;p>Please note that the environments listed in this section depend on the version of Fluxnova. Please select the corresponding version of this documentation on the docs site to see the environment that fits to your version of Fluxnova.&lt;/p>
 &lt;/div>
 &lt;/p>
 &lt;h1 id="containerapplication-server-for-runtime-components">Container/Application Server for Runtime Components&lt;/h1>
@@ -6965,7 +6968,7 @@ This can, for example, be useful when termination did not proceed in a desired w
 &lt;li>Restoring the last state of process instances that have been erroneously canceled&lt;/li>
 &lt;li>Restarting process instances after a termination caused by a wrong decision&lt;/li>
 &lt;/ul>
-&lt;p>To perform such an operation the process engine offers &lt;em>the process instance restart API&lt;/em>, that is entered via &lt;code>RuntimeService.restartProcessInstances(...)&lt;/code>. This API allows to specify multiple instantiation instructions in one call by using a fluent builder.&lt;/p></description></item><item><title>Repository Service</title><link>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/user-guide/model-api/bpmn-model-api/respository-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/user-guide/model-api/bpmn-model-api/respository-service/</guid><description>&lt;p>It is also possible to access the BPMN model instance by the process definition id using the &lt;a href="https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/user-guide/process-engine/process-engine-api/#services-api">Repository Service&lt;/a>, as the following incomplete test sample code shows. Please see the &lt;a href="https://github.com/finos/fluxnova-bpm-examples/tree/master/bpmn-model-api/generate-jsf-form">generate-jsf-form&lt;/a> quickstart for a complete example.&lt;/p>
+&lt;p>To perform such an operation the process engine offers &lt;em>the process instance restart API&lt;/em>, that is entered via &lt;code>RuntimeService.restartProcessInstances(...)&lt;/code>. This API allows to specify multiple instantiation instructions in one call by using a fluent builder.&lt;/p></description></item><item><title>Repository Service</title><link>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/user-guide/model-api/bpmn-model-api/respository-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/user-guide/model-api/bpmn-model-api/respository-service/</guid><description>&lt;p>It is also possible to access the BPMN model instance by the process definition id using the &lt;a href="https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/user-guide/process-engine/process-engine-api/#services-api">Repository Service&lt;/a>, as the following incomplete test sample code shows.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">testRepositoryService&lt;/span>() {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> runtimeService.&lt;span style="color:#a6e22e">startProcessInstanceByKey&lt;/span>(PROCESS_KEY);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String processDefinitionId &lt;span style="color:#f92672">=&lt;/span> repositoryService.&lt;span style="color:#a6e22e">createProcessDefinitionQuery&lt;/span>()
@@ -7073,23 +7076,7 @@ JUnit Rule. The
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you want to create a DMN engine with a custom configuration, you can pass
-this to the DMN engine rule.&lt;/p></description></item><item><title>The Fluxnova WildFly Subsystem</title><link>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/user-guide/runtime-container-integration/jboss/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/user-guide/runtime-container-integration/jboss/</guid><description>&lt;div class="note bg-warning docs-warning">
-
- &lt;h3>Deprecated Feature&lt;/h3>
-
- &lt;p>This feature is deprecated and provided solely for backward compatibility; it will be removed in future releases.&lt;/p>
-
-&lt;/div>
-
-
-&lt;div class="note bg-info docs-info">
- &lt;h3>Installation Guide&lt;/h3>
- &lt;p>&lt;p>If you &lt;a href="http://fluxnova.finos.org/download/">download a full distribution&lt;/a>, the Fluxnova Wildfly subsystem is readily installed into the application server.&lt;/p>
-&lt;p>&lt;a href="https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/installation/full/jboss/">Read the installation guide&lt;/a> to learn how to install the Fluxnova Wildfly subsystem into your Wildfly Server.&lt;/p>
-&lt;/p>
-&lt;/div>
-
-&lt;p>Fluxnova provides advanced integration for Wildfly in the form of a custom &lt;a href="https://docs.wildfly.org/23/Extending_WildFly.html">Wildfly Subsystem&lt;/a>.&lt;/p></description></item><item><title>Variables in the REST API</title><link>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/reference/rest/overview/variables/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/reference/rest/overview/variables/</guid><description>&lt;p>In the REST API, &lt;a href="https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/user-guide/process-engine/variables/">process variables&lt;/a> are represented by JSON objects of the following
+this to the DMN engine rule.&lt;/p></description></item><item><title>Variables in the REST API</title><link>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/reference/rest/overview/variables/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/reference/rest/overview/variables/</guid><description>&lt;p>In the REST API, &lt;a href="https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/user-guide/process-engine/variables/">process variables&lt;/a> are represented by JSON objects of the following
 form:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>{
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;type&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;String&amp;#34;&lt;/span>,
@@ -7371,8 +7358,7 @@ object must be strings representing date formats in accordance with
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="localization">Localization&lt;/h1>
-&lt;p>Tasklist can be localized. Fluxnova maintains English and German translation files.
-You can find and download community maintained translation files at the &lt;a href="https://github.com/finos/fluxnova-webapp-translations">Fluxnova webapp translations repository&lt;/a>.&lt;/p></description></item><item><title>Configuration</title><link>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/webapps/welcome/configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/webapps/welcome/configuration/</guid><description>&lt;p>You can override the default configuration of the Welcome application by using a central configuration file,
+&lt;p>Tasklist can be localized. Fluxnova maintains English and German translation files.&lt;/p></description></item><item><title>Configuration</title><link>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/webapps/welcome/configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/webapps/welcome/configuration/</guid><description>&lt;p>You can override the default configuration of the Welcome application by using a central configuration file,
 located in &lt;code>app/welcome/scripts/config.js&lt;/code>. The following configuration options are
 available:&lt;/p>
 &lt;h1 id="custom-links">Custom links&lt;/h1>
@@ -7615,7 +7601,7 @@ box:&lt;/p>
 &lt;li>&lt;a href="https://www.saxonica.com/html/documentation12/using-xsl/">Saxon XSLT&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;p>The script engine wrapper implementations can be found in the
-&lt;a href="https://github.com/fluxnova-community-hub/fluxnova-7-template-engines-jsr223">fluxnova-7-template-engines-jsr223&lt;/a> community hub repository.&lt;/p></description></item><item><title>Terminate Events</title><link>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/reference/bpmn20/events/terminate-event/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/reference/bpmn20/events/terminate-event/</guid><description>&lt;p>A terminate event ends the complete scope it is raised in and all contained inner scopes.&lt;/p>
+[fluxnova-7-template-engines-jsr223][fluxnova-7-template-engines-jsr223] community hub repository.&lt;/p></description></item><item><title>Terminate Events</title><link>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/reference/bpmn20/events/terminate-event/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/reference/bpmn20/events/terminate-event/</guid><description>&lt;p>A terminate event ends the complete scope it is raised in and all contained inner scopes.&lt;/p>
 &lt;p>It is useful if you have a parallel token flow in a process and you want to consume all tokens available in the same scope immediately.&lt;/p>
 &lt;p>A terminate event on process instance level terminates the complete instance. On subprocess level the current scope and all contained processes instances will be terminated.&lt;/p>
 &lt;div data-bpmn-diagram="../bpmn/event-terminate">&lt;/div>
@@ -7642,7 +7628,7 @@ box:&lt;/p>
 &lt;p>Assert that a process instance is suspended:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>assertThat(processInstance).&lt;span style="color:#a6e22e">isSuspended&lt;/span>();
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="instance-haspassed">Instance: hasPassed&lt;/h2>
-&lt;p>Assert that a process instance has passed a specified activity:&lt;/p></description></item><item><title>Connectors</title><link>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/user-guide/process-engine/connectors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/user-guide/process-engine/connectors/</guid><description>&lt;p>With the dependency &lt;a href="https://github.com/finos/fluxnova-bpm-platform/tree/master/connect">fluxnova-connect&lt;/a>, the process engine supports simple
+&lt;p>Assert that a process instance has passed a specified activity:&lt;/p></description></item><item><title>Connectors</title><link>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/user-guide/process-engine/connectors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/user-guide/process-engine/connectors/</guid><description>&lt;p>With the dependency &lt;a href="https://github.com/finos/fluxnova-bpm-platform/tree/main/connect">fluxnova-connect&lt;/a>, the process engine supports simple
 connectors. Currently the following connector implementations exist:&lt;/p>
 &lt;table class="table">
  &lt;tr>
@@ -7689,7 +7675,6 @@ connectors. Currently the following connector implementations exist:&lt;/p>
 
 &lt;p>If you add JSF forms as described below, you can easily use them as &lt;br/>
 &lt;a href="https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/user-guide/task-forms/#external-task-forms">external task forms&lt;/a>.&lt;/p>
-&lt;p>A working example can be found in the &lt;a href="https://github.com/finos/fluxnova-bpm-examples/tree/master/usertask/task-form-external-jsf">examples repository&lt;/a>.&lt;/p>
 &lt;p>The BPMN process used for this example is shown in the image below:&lt;/p>
 &lt;figure class="image">
  &lt;span>&lt;img
@@ -7760,7 +7745,7 @@ your &lt;code>pom.xml&lt;/code> file:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>fluxnova-bpm-spring-boot-starter-external-task-client&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;version&amp;gt;&lt;/span>1.0.0&lt;span style="color:#f92672">&amp;lt;/version&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Please check out our &lt;a href="https://github.com/finos/fluxnova-bpm-examples/tree/1.0#external-task-client-spring-boot">External Task Client Spring Boot Starter Examples&lt;/a>.&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Please check out the example code in the main &lt;a href="https://github.com/finos/fluxnova-examples">Fluxnova examples repository&lt;/a>.&lt;/p>
 &lt;p>The Client can subscribe to one or more topic names that are defined in your BPMN process model.
 When the execution waits in an External Task, the Client executes your custom business logic.
 For instance, the customer&amp;rsquo;s credit score is checked, and if successful, the External Task
@@ -7781,7 +7766,6 @@ extension to the &lt;a href="https://daniel-marian-buga-a-db.github.io/fluxnova-
 &lt;p>Process engine plugins can be configured&lt;/p>
 &lt;ul>
 &lt;li>in the &lt;a href="https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/reference/deployment-descriptors/">Fluxnova Deployment Descriptors&lt;/a> (bpm-platform.xml/processes.xml),&lt;/li>
-&lt;li>in the &lt;a href="https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/user-guide/runtime-container-integration/jboss/">Wildfly configuration file&lt;/a> (standalone.xml/domain.xml),&lt;/li>
 &lt;li>using &lt;a href="https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/user-guide/spring-framework-integration/#configure-a-process-engine-plugin-in-spring">Spring Beans XML&lt;/a>,&lt;/li>
 &lt;li>in the &lt;a href="https://daniel-marian-buga-a-db.github.io/fluxnova-docs-manual/pull/1/user-guide/fluxnova-bpm-run/#process-engine-plugin-registration">Fluxnova Run YAML configuration files&lt;/a>&lt;/li>
 &lt;li>programatically.&lt;/li>
