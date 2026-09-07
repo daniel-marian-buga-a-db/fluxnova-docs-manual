@@ -15,6 +15,7 @@
     { "pattern": "^https://dev\\.mysql\\.com/" },
     { "pattern": "^https://blogs\\.oracle\\.com/" },
     { "pattern": "^https?://(www\\.)?crackstation\\.net/" },
+    { "pattern": "^https://www\\.gnu\\.org/software/classpath/license\\.html$" },
     { "pattern": "^file://" }
   ],
   "retryOn429": true
