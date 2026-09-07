@@ -12,7 +12,6 @@
     { "pattern": "^https://projects\\.eclipse\\.org/projects/ee4j\\.jaxrs/who$" },
     { "pattern": "^https://downloads\\.camunda\\.cloud/enterprise-release" },
     { "pattern": "^https://dev\\.mysql\\.com/" },
-    { "pattern": "^https://blogs\\.oracle\\.com/" },
     { "pattern": "^https://www\\.gnu\\.org/software/classpath/license\\.html$" },
     { "pattern": "^file://" }
   ],
