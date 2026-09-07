@@ -54,8 +54,7 @@ export default {
 
 # Localization
 
-Cockpit can be localized. Fluxnova maintains English and German translation files. 
-You can find and download community maintained translation files at the [Fluxnova webapp translations repository](https://github.com/finos/fluxnova-webapp-translations).
+Cockpit can be localized. Fluxnova maintains English and German translation files.
 
 The localization of Cockpit is contained in the `app/cockpit/locales/` directory. This
 directory contains a separate localization file for every available language. The file name
@@ -99,7 +98,7 @@ export default {
 ```
 This includes a `custom-module/module.js` file. The path is relative to the `app/cockpit` folder in the Fluxnova webapp .war file.
 
-You can find a complete example about how to use `customScripts` to develop a Cockpit Plugin in the [Fluxnova examples repository](https://github.com/finos/fluxnova-bpm-examples/tree/master/cockpit/cockpit-cats).
+You can find a complete example about how to use `customScripts` to develop a Cockpit Plugin in the main [Fluxnova examples repository](https://github.com/finos/fluxnova-examples).
 
 ## Legacy Custom Scripts
 
@@ -124,7 +123,7 @@ export default {
 }
 ```
 
-For more details about legacy Plugins, check out the legacy [Plugin documentation](https://docs.fluxnova.finos.org/manual/7.13/webapps/cockpit/extend/plugins/). Please note that this link will take you to the documentation of Fluxnova **7.13** .
+For more details about legacy plugins, see the plugin extension documentation in the corresponding older Fluxnova release notes and keep the app configuration aligned with the version you are running.
 
 # BPMN Diagram Viewer (bpmn.js)
 
@@ -146,7 +145,7 @@ export default {
 }
 ```
 
-You can find an example on how to add an additional bpmn.js module to Cockpit in the [Fluxnova examples repository](https://github.com/finos/fluxnova-bpm-examples/tree/master/cockpit/cockpit-bpmn-js-module).
+You can find an example on how to add an additional bpmn.js module to Cockpit in the main [Fluxnova examples repository](https://github.com/finos/fluxnova-examples).
 
 ## Moddle Extensions
 The BPMN moddle can be extended by adding a `moddleExtensions` property. Each moddle extension has a unique name (key)

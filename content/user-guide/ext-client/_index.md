@@ -11,8 +11,7 @@ menu:
 
 ---
 
-The **Fluxnova External Task Client** allows you to set up remote service tasks for your workflow. There is a supported [Java](https://github.com/finos/fluxnova-bpm-platform/tree/master/clients/java)
-as well as [JavaScript](https://github.com/finos/fluxnova-external-task-client-js) implementation.
+The **Fluxnova External Task Client** allows you to set up remote service tasks for your workflow. There is a supported Java client and a JavaScript client implementation available in the project ecosystem.
 
 ## Features
 * Complete External Tasks
@@ -178,8 +177,7 @@ ExternalTaskClient.create()
 
 ## Examples
 
-Complete examples of how to set up the different External Task Clients can be found on GitHub ([Java](https://github.com/finos/fluxnova-bpm-examples/tree/{{< minor-version >}}/clients/java),
-[JavaScript](https://github.com/finos/fluxnova-external-task-client-js/tree/master/examples)).
+Complete examples of how to set up the different External Task Clients can be found in the main [Fluxnova examples repository](https://github.com/finos/fluxnova-examples).
 
 ## External task throughput
 

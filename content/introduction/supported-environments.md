@@ -13,7 +13,7 @@ menu:
 
 Run Fluxnova in every Java-runnable environment. Fluxnova is supported with our QA infrastructure in the following environments.
 {{< note title="Supported Environments" class="info" >}}
-  Please note that the environments listed in this section depend on the version of Fluxnova. Please select the corresponding version of this documentation to see the environment that fits to your version of Fluxnova. e.g., [supported environments for version 1.0](http://docs.fluxnova.finos.org/1.0/guides/user-guide/#introduction-supported-environments)
+  Please note that the environments listed in this section depend on the version of Fluxnova. Please select the corresponding version of this documentation on the docs site to see the environment that fits to your version of Fluxnova.
 {{< /note >}}
 
 

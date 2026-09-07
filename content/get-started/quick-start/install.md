@@ -48,7 +48,7 @@ Make sure to use a Java version from [Fluxnova's list of supported environments]
 
 # Fluxnova Platform
 
-First, download a distribution of the Fluxnova Platform. You can choose from different distributions for [various application servers]({{< relref "/installation/full/" >}}). In this tutorial, we'll use Fluxnova Platform Run. Download it from [the download page](https://fluxnova.finos.org/download/platform).
+First, download a distribution of the Fluxnova Platform. You can choose from different distributions for [various application servers]({{< relref "/installation/full/" >}}). In this tutorial, we'll use Fluxnova Platform Run. Download it from the [Fluxnova Platform releases](https://github.com/finos/fluxnova-bpm-platform/releases).
 
 After downloading the distribution, unpack it inside a directory of your choice.
 
@@ -58,7 +58,7 @@ This script will start the application server. Open your web browser and navigat
 
 # Fluxnova Modeler
 
-Download the Fluxnova Modeler from [the download page](https://fluxnova.finos.org/download/modeler/).
+Download the Fluxnova Modeler from the [Fluxnova Modeler releases](https://github.com/finos/fluxnova-modeler/releases/latest).
 
 After downloading the Modeler, simply unzip the download in a folder of your choice.
 

@@ -35,5 +35,3 @@ viewer.importXML(xml, function(err) {
   }
 });
 ```
-
-Alternatively, you can use the  [bpmn-viewer widget](https://github.com/finos/fluxnova-bpm-platform/blob/master/webapps/frontend/fluxnova-commons-ui/lib/widgets/bpmn-viewer/cam-widget-bpmn-viewer.html) from the Fluxnova commons UI.

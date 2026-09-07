@@ -24,7 +24,7 @@ There are different ways of using Fluxnova and different components are provided
 * Web applications (Cockpit, Tasklist, ...): similar considerations to the REST API apply.
 
 
-Keep in mind that it is not recommended to use the pre-packaged distribution in production environment rather install the full distribution manually (for example [Tomcat manual installation](https://docs.fluxnova.finos.org/manual/latest/installation/full/tomcat/manual/)).
+Keep in mind that it is not recommended to use the pre-packaged distribution in production environment rather install the full distribution manually (for example [Tomcat manual installation]({{< relref "/installation/full/tomcat/manual.md" >}})).
 
 {{< note title="Security Consideration" class="warning" >}}
   The pre-packaged distribution is intended for users who want a getting started experience. In case
