@@ -332,7 +332,7 @@ In case you want to rely on allowed package and class names from the engine conf
 An implementation of this interface registered as validator will be provided with the defined packages and classes from the engine configuration upon initialization of the engine via `#setAllowedClasses` and `#setAllowedPackages`.
 
 {{< note title="Jackson Type Whitelisting" class="info" >}}
-  Spin's JSON implementation is based on Jackson. If you configure Fluxnova Spin to deserialize polymorphic classes based on type information included in the JSON itself (i.e. where the JSON contains explicit class names), we strongly recommend to additionally enable Jackson's [Whitelisting feature](https://medium.com/@cowtowncoder/jackson-2-10-safe-default-typing-2d018f0ce2ba) starting with version 2.10. Fluxnova's whitelisting feature does not cover this case.
+  Spin's JSON implementation is based on Jackson. If you configure Fluxnova Spin to deserialize polymorphic classes based on type information included in the JSON itself (i.e. where the JSON contains explicit class names), we strongly recommend to additionally enable Jackson's [Whitelisting feature](https://cowtowncoder.medium.com/jackson-2-10-safe-default-typing-2d018f0ce2ba) starting with version 2.10. Fluxnova's whitelisting feature does not cover this case.
 {{< /note >}}
 
 ## User operation log settings for synchronous operations affecting multiple entities
