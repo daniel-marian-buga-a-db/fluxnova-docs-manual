@@ -47,6 +47,10 @@
     {
       "_comment": "Ignores Maven Central repository lookup links (anti-bot rules)",
       "pattern": "^https://mvnrepository\\.com/"
+    },
+    {
+      "_comment": "Ignores the archived path-based OWASP Tomcat security wiki page to prevent false positive failures",
+      "pattern": "^https://wiki\\.owasp\\.org/index\\.php/Securing_tomcat$"
     }
   ],
   "retryOn429": true

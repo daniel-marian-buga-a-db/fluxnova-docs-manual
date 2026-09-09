@@ -641,7 +641,7 @@ Refactored SqlBuilder class (SQL, AbstractSQL)
 Copyright (c) 2011-2024 Lightbend, Inc.
 
 Scala includes software developed at
-LAMP/EPFL (https://lamp.epfl.ch/) and
+LAMP/EPFL (https://www.epfl.ch/labs/lamp/) and
 Lightbend, Inc. (https://www.lightbend.com/).
 
 Licensed under the Apache License, Version 2.0 (the "License").
