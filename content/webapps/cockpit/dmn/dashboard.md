@@ -52,6 +52,5 @@ Furthermore, you can copy a link to the current search query to your clipboard b
 
 [decision-definition-view]: {{< relref "/webapps/cockpit/dmn/decision-definition-view.md" >}}
 [decision-instance-view]: {{< relref "/webapps/cockpit/dmn/decision-instance-view.md" >}}
-[decision-requirements-definition-view]: {{< relref "/webapps/cockpit/dmn/decision-requirements-definition-view.md" >}}
-[decision-requirements-definition-instance-view]: {{< relref "/webapps/cockpit/dmn/decision-requirements-instance-view.md" >}}
+
 {{< /comment >}}
