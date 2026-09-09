@@ -56,7 +56,6 @@ export default {
 # Localization
 
 Admin can be localized. Fluxnova maintains English and German translation files.
-Community-maintained locale files can be added alongside the built-in locale bundles in the web app installation.
 
 The localization of Admin is contained in the `app/admin/locales/` directory. This
 directory contains a separate localization file for every available language. The file name

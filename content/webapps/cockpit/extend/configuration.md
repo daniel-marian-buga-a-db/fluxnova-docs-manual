@@ -98,8 +98,6 @@ export default {
 ```
 This includes a `custom-module/module.js` file. The path is relative to the `app/cockpit` folder in the Fluxnova webapp .war file.
 
-You can find a complete example about how to use `customScripts` to develop a Cockpit Plugin in the main [Fluxnova examples repository](https://github.com/finos/fluxnova-examples).
-
 ## Legacy Custom Scripts
 
 Custom Scripts created for Fluxnova.13 or earlier can be included using the `requireJsConfig` property to the `app/cockpit/scripts/config.js`. You can include these custom scripts using the custom [requireJS configuration](https://requirejs.org/docs/api.html#config).
@@ -144,8 +142,6 @@ export default {
   }
 }
 ```
-
-You can find an example on how to add an additional bpmn.js module to Cockpit in the main [Fluxnova examples repository](https://github.com/finos/fluxnova-examples).
 
 ## Moddle Extensions
 The BPMN moddle can be extended by adding a `moddleExtensions` property. Each moddle extension has a unique name (key)
