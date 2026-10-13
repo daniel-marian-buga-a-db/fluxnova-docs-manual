@@ -3,7 +3,7 @@ name: Check Markdown links
 on:
   push:
     branches:
-      - main
+      - db-contrib/fix-dead-md-links-updates
   pull_request:
   workflow_dispatch:
 
