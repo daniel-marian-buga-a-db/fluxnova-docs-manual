@@ -312,7 +312,7 @@ about the several headers, the defaults and how to configure the HTTP headers ac
 Process variables can be submitted as Java objects using the JDK built-in `application/x-java-serialized-object` data format, JSON or XML along with a Java class name via the Fluxnova REST API and web applications.
 On server side, they can then be deserialized into Java objects, so that Java code can work with them in a native way. See [Fluxnova Spin]({{< relref "/user-guide/data-formats/configuring-spin-integration.md" >}}) for details and this {{< restref page="putLocalExecutionVariable" text="REST API endpoint" tag="Execution" >}} for an example.
 
-If an attacker can access these endpoints, they can exploit so-called _serialization gadgets_, i.e. classes that run vulnerable code during deserialization resulting in remote code execution in the general case. For example, consider a class constructor that makes a REST request based on a field value. An attacker could submit a forged variable value so that during deserialization, when the constructor is called, the application server would make an arbitrary REST request to a destination of the attacker's choice. For details, see [OWASP's description of Deserialization of untrusted data](https://www.owasp.org/index.php/Deserialization_of_untrusted_data).
+If an attacker can access these endpoints, they can exploit so-called _serialization gadgets_, i.e. classes that run vulnerable code during deserialization resulting in remote code execution in the general case. For example, consider a class constructor that makes a REST request based on a field value. An attacker could submit a forged variable value so that during deserialization, when the constructor is called, the application server would make an arbitrary REST request to a destination of the attacker's choice. For details, see [OWASP's description of Deserialization of untrusted data](https://community.owasp.org/vulnerabilities/Deserialization_of_untrusted_data).
 
 In addition to safe deserialization settings, use restricted-variable authorization to limit who can read or modify sensitive variable data at runtime. Restricted-variable reads are filtered based on read permissions, and write operations are rejected when permission is missing. See [Process Variables]({{< ref "/user-guide/process-engine/variables.md#restricted-variables" >}}) and [Authorization Service]({{< ref "/user-guide/process-engine/authorization-service.md#restricted-variable-permissions" >}}).
 
@@ -403,7 +403,7 @@ When it comes to error handling, from a security perspective, the top goal is to
 from obtaining technical details about the system, which for example, a stack trace could reveal 
 (see OWASP's [Improper Error Handling article] for more information).
 
-[Improper Error Handling article]: https://www.owasp.org/index.php/Improper_Error_Handling
+[Improper Error Handling article]: https://cheatsheetseries.owasp.org/cheatsheets/Error_Handling_Cheat_Sheet.html
 
 In this section, we describe what we do to prevent disclosing technical details about the system.
 
