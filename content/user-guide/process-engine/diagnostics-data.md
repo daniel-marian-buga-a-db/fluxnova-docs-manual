@@ -116,5 +116,5 @@ The counts are collected from the start of the engine or the last reported time 
 
 ## Source code 
 
-In case you want further details, you can have a look at the implementation of the diagnostics topic in [our codebase](https://github.com/finos/fluxnova-bpm-platform/blob/master/engine/src/main/java/org/finos/fluxnova/bpm/engine/impl/diagnostics/DiagnosticsCollector.java). The link leads you to the current `master` version of the feature.
+In case you want further details, you can have a look at the implementation of the diagnostics topic in [our codebase](https://github.com/finos/fluxnova-bpm-platform/blob/main/engine/src/main/java/org/finos/fluxnova/bpm/engine/impl/diagnostics/DiagnosticsCollector.java). The link leads you to the current `main` version of the feature.
 

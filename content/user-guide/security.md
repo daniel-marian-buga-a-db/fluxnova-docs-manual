@@ -233,8 +233,8 @@ standard.
 A [built-in password policy]({{< relref "/user-guide/process-engine/password-policy.md#built-in-password-policy" >}}) 
 can be enabled that requires passwords to follow specific rules. However, you can achieve a much higher 
 level of security by implementing a more sophisticated custom password policy (e.g., with the help of 
-[Password Topology Blacklisting] (https://blog.korelogic.com/blog/2014/04/04/pathwell_topologies), 
-also see the [OWASP guide] (https://github.com/OWASP/CheatSheetSeries/blob/7d94e9a29174b8fd76235ca60f47245d1f34df1e/cheatsheets/Authentication_Cheat_Sheet.md#password-complexity) 
+[Password Topology Blacklisting](https://blog.korelogic.com/blog/2014/04/04/pathwell_topologies), 
+also see the [OWASP Authentication Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html#password-complexity) 
 on password complexity).
 
 You can find more information on how to enable the base password policy and how to implement a custom password policy in our [User Guide]({{< relref "/user-guide/process-engine/password-policy.md" >}}).
@@ -283,7 +283,7 @@ To ensure full security, please consult the documentation about [Cookie Security
 ## XML Security
 Fluxnova handles many XML files containing configurations of process engines, definitions of process models and more. In order to mitigate possible vulnerabilities that can be introduced by XML files, the following measures are activated by default:
 
-* Prevention against XML eXternal Entity (XXE) injections according to [OWASP](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.md)
+* Prevention against XML eXternal Entity (XXE) injections according to [OWASP XXE Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html)
 * Feature Secure Processing (FSP) of XML files according to [Oracle](https://docs.oracle.com/javase/8/docs/api/javax/xml/XMLConstants.html#FEATURE_SECURE_PROCESSING) which introduces [limits](https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html) for several XML properties
 
 If the limitations on XML files introduced by XXE prevention need to be removed, XXE processing can be enabled via `enableXxeProcessing` in the [process engine configuration]({{< relref "/reference/deployment-descriptors/tags/process-engine.md#configuration-properties" >}}).
