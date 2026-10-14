@@ -1,10 +1,6 @@
 {
   "ignorePatterns": [
     {
-      "_comment": "Ignores raw Hugo shortcodes starting at line start",
-      "pattern": "^\\{\\{<"
-    },
-    {
       "_comment": "Ignores unrendered Hugo template shortcodes ({{...}})",
       "pattern": ".*\\{\\{.*"
     },
